@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Code.html" />
     <Content Include="CSS\prism.css" />
+    <Content Include="img\wlc-bg1.jpg" />
     <Content Include="Index.html" />
     <Content Include="SCRIPTS\prism.js" />
     <Content Include="Solve.html" />
