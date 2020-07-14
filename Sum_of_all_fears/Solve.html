@@ -63,6 +63,15 @@
                 </ul>
             </div>
         </div>
+        <div class="row">
+            <div class="col-6 col-offset-3">
+                <input id="soafInput" type="number" />
+                <button id="soafBtn" class="btn-large btn-success">Sum of the fears</button>
+            </div>
+        </div>
+        <div class="row">
+            <p id="soafOutput"></p>
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
@@ -73,7 +82,24 @@
     
     
     <script>
-
+        $("#soafBtn").on("click", function () {
+            let soafArray = [10, 15, 3, 7]
+                console.log(soafArray);
+            let k = Number($("#soafInput").val());
+            console.log(k);
+            for (let loop = 0; loop < soafArray.length - 1; loop++) {
+                let checkNum = k - soafArray[loop];
+            console.log(checkNum);
+            console.log(loop);
+                for (let innerLoop = loop + 1; innerLoop < soafArray.length - 1; innerLoop++) {
+                    console.log(innerLoop);
+                    if (checkNum == soafArray[innerLoop]) {
+                        $("#soafOutput").text(`K value found! ${soafArray[loop]} + ${soafArray[innerLoop]} = ${k}!`)
+                    }
+                }
+            }
+                    
+        })
 
 
 
