@@ -29,6 +29,17 @@
         .textColor {
             color: #08d655;
         }
+		
+
+		.bgColor {
+			background-color: #343a40;
+		}
+
+
+
+		.dropdown-content a:hover {
+			background-color: transparent;
+		}
     </style>
 </head>
 
@@ -61,7 +72,16 @@
                         <a class="nav-link" href="//kodiekane.netlify.app/">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown">Dropdown</a>
+                            <div class="dropdown-menu bgColor">
+                                <div class="dropdown-content">
+                                    <a href="//kodiekane-tacocat.netlify.app/" class="dropdown-item nav-link">Taco Cat</a>
+                                    <a href="//kodiekane-fizzbuzz.netlify.app/" class="dropdown-item nav-item nav-link">Fizz-Buzz</a>
+                                    <a href="#" class="dropdown-item nav-item nav-link">Sunset Hills</a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -69,7 +89,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container textColor">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">The Title of the Exercise</h1>

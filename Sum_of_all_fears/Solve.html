@@ -32,6 +32,17 @@
         .btnWide {
             width: 100%
         }
+		
+
+		.bgColor {
+			background-color: #343a40;
+		}
+
+
+
+		.dropdown-content a:hover {
+			background-color: transparent;
+		}
     </style>
 
 </head>
@@ -65,7 +76,16 @@
                             <a class="nav-link" href="//kodiekane.netlify.app/">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown">Dropdown</a>
+                                <div class="dropdown-menu bgColor">
+                                    <div class="dropdown-content">
+                                        <a href="//kodiekane-tacocat.netlify.app/" class="dropdown-item nav-link">Taco Cat</a>
+                                        <a href="//kodiekane-fizzbuzz.netlify.app/" class="dropdown-item nav-item nav-link">Fizz-Buzz</a>
+                                        <a href="#" class="dropdown-item nav-item nav-link">Sunset Hills</a>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -117,7 +137,13 @@
             <div class="row">
                 <p id="soafOutput"></p>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-4"></div>
+                    <div class="col-4">
+                        <button id="btnClear" class="btn-large btn-outline-success btn-dark btnWide">Try again?</button>
+                    </div>
+                </div>
+            </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
@@ -128,7 +154,9 @@
     
     
     <script>
-        $("#btnSub").on("click", function() {
+        $("#btnClear").hide();
+        $("#btnSub").on("click", function () {
+            $("#btnClear").show();
             let k = parseInt($("#soafK").val());
             let number1 = parseInt($(input1).val());
             let number2 = parseInt($(input2).val());
@@ -155,6 +183,16 @@
                 }
             }
             $("#soafOutput").text(output);
+        })
+        $("#btnClear").on("click", function () {
+			$("#soafK").val("");
+            $("#input1").val("");
+            $("#input2").val("");
+            $("#input3").val("");
+            $("#input4").val("");
+            $("#input5").val("");
+			$("#soafOutput").text("");
+            $("#btnClear").hide();
         })
     </script>
 </body>

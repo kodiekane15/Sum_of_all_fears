@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link href="CSS/prism.css" rel="stylesheet" />
     <style>
         .welcome_Wrap {
             background-image: url('img/wlc-bg1.jpg');
@@ -29,6 +29,17 @@
         .textColor {
             color: #08d655;
         }
+		
+
+		.bgColor {
+			background-color: #343a40;
+		}
+
+
+
+		.dropdown-content a:hover {
+			background-color: transparent;
+		}
     </style>
 </head>
 
@@ -61,7 +72,16 @@
                             <a class="nav-link" href="//kodiekane.netlify.app/">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown">Dropdown</a>
+                                <div class="dropdown-menu bgColor">
+                                    <div class="dropdown-content">
+                                        <a href="//kodiekane-tacocat.netlify.app/" class="dropdown-item nav-link">Taco Cat</a>
+                                        <a href="//kodiekane-fizzbuzz.netlify.app/" class="dropdown-item nav-item nav-link">Fizz-Buzz</a>
+                                        <a href="#" class="dropdown-item nav-item nav-link">Sunset Hills</a>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -69,7 +89,7 @@
         </nav>
 
         <!-- Page Content -->
-        <div class="container">
+        <div class="container textColor">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h1 class="mt-5">This Page shows your JS code</h1>
@@ -78,6 +98,52 @@
                         <li>Code with highlighter</li>
                         <li>Will display on this page</li>
                     </ul>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-9">
+<pre><code class="language-js">
+    $("#btnSub").on("click", function() {
+    let k = parseInt($("#soafK").val());
+    let number1 = parseInt($(input1).val());
+    let number2 = parseInt($(input2).val());
+    let number3 = parseInt($(input3).val());
+    let number4 = parseInt($(input4).val());
+    let number5 = parseInt($(input5).val());
+
+    let inputs = [number1, number2, number3, number4, number5]
+
+    let output = "";
+
+    for (let index = 0; index < inputs.length - 1; index++) {
+    if (inputs[index] > k)
+    continue;
+
+    let result = k - inputs[index];
+
+    if (inputs.indexOf(result, index + 1) > -1) {
+    output = `We found a solution for the K value of ${k}`;
+    break;
+    }
+    else {
+    output = `We could not find a solution for the K value of ${k}`;
+    }
+    }
+    $("#soafOutput").text(output);
+    })
+    $("#btnClear").on("click", function () {
+    $("#soafK").val("");
+    $("#input1").val("");
+    $("#input2").val("");
+    $("#input3").val("");
+    $("#input4").val("");
+    $("#input5").val("");
+    $("#soafOutput").text("");
+    $("#btnClear").hide();
+    })
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,7 +153,7 @@
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+    <script src="SCRIPTS/prism.js"></script>
 </body>
 
 </html>
